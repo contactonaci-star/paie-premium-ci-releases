@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "1. Installer les dépendances", "type": "shell", "command": "npm install", "problemMatcher": [] },
+    { "label": "2. Lancer le logiciel", "type": "shell", "command": "npm start", "problemMatcher": [] },
+    { "label": "3. Fabriquer l'installateur Windows (.exe)", "type": "shell", "command": "npm run dist", "problemMatcher": [] }
+  ]
+}

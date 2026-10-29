@@ -1,0 +1,7 @@
+{
+  "files.encoding": "utf8",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.exclude": { "node_modules": true, "dist": true },
+  "search.exclude": { "node_modules": true, "dist": true, "renderer/vendor": true }
+}

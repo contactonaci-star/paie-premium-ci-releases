@@ -1,0 +1,66 @@
+{
+  "name": "paie-premium-ci",
+  "productName": "Paie Premium CI",
+  "version": "1.0.0",
+  "description": "Logiciel de paie Côte d'Ivoire — bulletins, déclarations ITS/CNPS/FDFP, États 301 et DISA",
+  "main": "main.js",
+  "author": "Attin Richard",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --x64"
+  },
+  "build": {
+    "appId": "ci.paiepremium.app",
+    "productName": "Paie Premium CI",
+    "copyright": "© 2026 Attin Richard",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "owner": "contactonaci-star",
+      "repo": "paie-premium-ci-releases"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": true,
+      "artifactName": "Paie-Premium-CI-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Paie Premium CI",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "uninstallDisplayName": "Paie Premium CI",
+      "deleteAppDataOnUninstall": true,
+      "language": "1036",
+      "runAfterFinish": true
+    }
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11"
+  }
+}
